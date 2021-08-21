@@ -1,28 +1,19 @@
 # spectrome-revisited
 
-[Xihe Xie](https://github.com/axiezai), [Megan J. Stanley](https://github.com/megstanley), & [Pablo F. Damasceno](https://github.com/pfdamasceno)
-
-[![DOI](https://zenodo.org/badge/217634383.svg)](https://zenodo.org/badge/latestdoi/217634383)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Raj-Lab-UCSF/spectrome/master)
-
-`Spectrome` is a combination of the words "spectrum" and "connectome". This package is the collection of codes that constructed the analysis for the publication ["Spectral graph theory of brain oscillations"](https://www.biorxiv.org/content/10.1101/589176v3).
+`Spectrome` is a combination of the words "spectrum" and "connectome". This package is the collection of codes that constructed the analysis for the preprint ["Spectral graph theory of brain oscillations - revisited"](insert link). This repository is developed based on the original model's [repository](https://github.com/Raj-Lab-UCSF/spectrome).
 
 The spectral graph model (SGM) is a brain structure-function model that simulates brain activity power spectrum given a structural connectome. The model is linear, low-dimensional, and provides an analytical relationship between the brain's structural and functional patterns.
 
 ## Citation:
-The code in this repository is used for the analysis as shown in: Raj, Ashish, Chang Cai, Xihe Xie, Eva Palacios, Julia Owen, Pratik Mukherjee, and Srikantan Nagarajan. “Spectral Graph Theory of Brain Oscillations.” Human Brain Mappin. https://doi.org/10.1002/hbm.24991.
-
-
-Code citation: Xihe Xie, Megan J. Stanley, & Pablo F. Damasceno. (2019, November 7). Raj-Lab-UCSF/spectrome: Spectral Graph Model of Connectomes (Version 0.15). Zenodo. http://doi.org/10.5281/zenodo.3532497
+The code in this repository is used for the analysis as shown in: Parul Verma, Srikantan Nagarajan, and Ashish Raj. “Spectral Graph Theory of Brain Oscillations - revisited” (insert link).
 
 ## Abstract:
-The relationship between the brain’s structural wiring and the functional patterns of neural activity is of fundamental interest in computational neuroscience. We examine a hierarchical, linear graph spectral model of brain activity at mesoscopic and macroscopic scales. The model formulation yields an elegant closed-form solution for the structure-function problem, specified by the graph spectrum of the structural connectome’s Laplacian, with simple, universal rules of dynamics specified by a minimal set of global parameters. The resulting parsimonious and analytical solution stands in contrast to complex numerical simulations of high dimensional coupled non-linear neural field models. This spectral graph model accurately predicts spatial and spectral features of neural oscillatory activity across the brain and was successful in simultaneously reproducing empirically observed spatial and spectral patterns of alpha-band (8-12 Hz) and beta-band (15-30Hz) activity estimated from source localized scalp magneto-encephalography (MEG). This spectral graph model demonstrates that certain brain oscillations are emergent properties of the graph structure of the structural connectome and provides important insights towards understanding the fundamental relationship between network topology and macroscopic whole-brain dynamics.
+Mathematical modeling of the relationship between the functional activity and the structural wiring of the brain has largely been undertaken using non-linear and biophysically detailed mathematical models with regionally varying parameters. While this approach provides us a rich repertoire of multistable dynamics that can be displayed by the brain, it is computationally demanding. Moreover, although neuronal dynamics at the microscopic level are nonlinear and chaotic, it is unclear if such detailed nonlinear models are required to capture the emergent meso- (regional population ensemble) and macro-scale (whole brain) behavior, which is largely deterministic and reproducible across individuals. Indeed, recent modeling effort based on spectral graph theory has shown that an analytical model without regionally varying parameters can capture the empirical magnetoencephalography frequency spectra and the spatial patterns of the alpha and beta frequency bands accurately. 
+
+In this work, we demonstrate an improved hierarchical, linearized, and analytic spectral graph theory-based model that can capture the frequency spectra obtained from magnetoencephalography recordings of resting healthy subjects. We reformulated the spectral graph theory model in line with classical neural mass models, therefore providing more biologically interpretable parameters, especially at the local scale. We demonstrated that this model performs better than the original model when comparing the spectral correlation of modeled frequency spectra and that obtained from the magnetoencephalography recordings. This model also performs equally well in predicting the spatial patterns of the empirical alpha and beta frequency bands.
 
 ## Set-up:
 
-To avoid going through the hustles of setting up a `conda` environment, you can simply click on the `Binder` badge above and run the Jupyter notebooks through a docker image on the cloud.
-
----
 First clone the environment to your computer, either download this repo as a `.zip` file or `git clone https://github.com/Raj-Lab-UCSF/spectrome.git`.
 
 Set up a [conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html) if you do not have all the packages/compatible versions. The list of dependencies is listed in `environment.yml`.
@@ -40,11 +31,10 @@ If you want to be able to run `spectrome` from anywhere, just add it's path to y
 After completing the set-up for conda environment and `spectrome` path, you may go to the `spectrome` folder and type `jupyter notebook` or `jupyter lab` in your terminal to run the Jupyter notebooks.
 
 ## Files:
- - `../spectrome/notebooks`: contains three jupyter notebooks, `run_model_example.ipynb` is the basic simulation of frequency spectrums with default parameters for the HCP template connectome. `SGM_frequency_responses` looks at the eigenvalues and their frequency responses, and `reproduce_MEG_spectra.ipynb` shows an example of the spectral graph model recapitulating empirical MEG spectra with optimized parameters.
+ - `../spectrome/notebooks`: contains three jupyter notebooks, `run_model_example.ipynb` is the basic simulation of frequency spectrums with default parameters for the HCP template connectome. `spatialcorrelation.ipynb` looks at the spatial correlations between the eigenmodes and the empirical spectra, and `reproduce_MEG_modeled_spectra.ipynb` compares optimized modeled spectra with the MEG spectra.
 
  - `../spectrome/data`: contains intermediate data.
     - `mean80_fibercount/length.csv`: HCP template connectome and distance matrix.
-    - The following `.mat` files come from Matlab structs, `..['output']['param']` are the fields for the optimized parameters, other fields are other outputs from the optimization algorith.
-        - `SCFC_opparam_individual.mat`: individual subject's connectivity matrices (N = 36).
-        - `SCFC_opparam_HCP.mat`: optimized model parameters for the HCP connectome.
-    - `freqMEGdata_8002-101.h5`: one example source localized MEG spectrum. Dictionary with region names attached to each column (keys).
+    - `individual_connectomes_reordered.nc`: individual subject's connectivity matrices (N = 36).
+    - `individual_psd_reordered_matlab.nc`: individual subject's MEG spectra (N = 36).
+    - `MSGM_Reordered_matlab_500iter.csv`: optimized model parameters for the 36 subjects.
