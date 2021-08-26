@@ -1,8 +1,6 @@
-"""Module with generic useful functions such as to return main dir path, and
-writing hdf5 files."""
+"""Module with generic useful functions such as to return main dir path."""
 
 import os
-import deepdish as dd
 
 from pathlib import Path
 
@@ -27,11 +25,6 @@ def get_data_path():
     """Return absolute path to `/data/`."""
     root_path = Path(__file__).parent.parent
     data_path = os.path.join(str(root_path), "data")
-    return data_path
-
-def get_sachin_path():
-    root_path = Path(__file__).parent.parent
-    data_path = os.path.join("/media/rajlab/DATASETS/SGM_fit", str(root_path), "data")
     return data_path
 
 def get_absolute_path(relative_path="."):
@@ -61,48 +54,3 @@ def get_root_path():
     root_path = Path(__file__).parent.parent
     return root_path
 
-
-def save_hdf5(path, dict):
-    """Save out a dictionary/numpy array to HDF5 format using deepdish package.
-
-    Args:
-        path (type): full path including filename of intended output.
-        dict (type): dictionary/numpy array to be saved.
-
-    Returns:
-        type: Description of returned object.
-
-    """
-
-    dd.io.save(path, dict)
-
-
-def read_hdf5(path):
-    """Read in dictionary/numpy array from HDF5 format using deepdish package.
-
-    Args:
-        path (type): full path including filename of input.
-
-    Returns:
-        type: dictionary of data.
-
-    """
-
-    dict = dd.io.load(path)
-    return dict
-
-
-def walk_tree(datapath):
-    """Return list of directories in the passed folder.
-
-    Args:
-        datapath (type): folder of interest.
-
-    Returns:
-        type: list of directories in the passed folder.
-
-    """
-    directories = []
-    for (path, dirs, files) in os.walk(datapath):
-        directories.append(dirs)
-    return directories[0]

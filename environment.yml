@@ -12,8 +12,6 @@ dependencies:
   - seaborn
   - netCDF4
   - pip:
-    - deepdish
-    - nitime
     - python-csv
     - sklearn
     - tqdm==4.30.0
