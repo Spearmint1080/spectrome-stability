@@ -1,6 +1,5 @@
 """ running the ntf over a range of frequencies."""
 from ..forward import network_transfer as nt
-import time as time
 import numpy as np
 
 def run_local_coupling_forward(brain, params, freqs):
