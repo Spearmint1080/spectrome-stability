@@ -1,11 +1,25 @@
 # spectrome-revisited
 
-`Spectrome` is a combination of the words "spectrum" and "connectome". This package is the collection of codes that constructed the analysis for the preprint ["Spectral graph theory of brain oscillations - revisited"](insert link). This repository is developed based on the original model's [repository](https://github.com/Raj-Lab-UCSF/spectrome).
+`Spectrome` is a combination of the words "spectrum" and "connectome". This package is the collection of codes that constructed the analysis for the preprint ["Spectral graph theory of brain oscillations - revisited and improved"](https://www.biorxiv.org/content/10.1101/2021.09.28.462078v1). This repository is developed based on the original model's [repository](https://github.com/Raj-Lab-UCSF/spectrome).
 
 The spectral graph model (SGM) is a brain structure-function model that simulates brain activity power spectrum given a structural connectome. The model is linear, low-dimensional, and provides an analytical relationship between the brain's structural and functional patterns.
 
 ## Citation:
-The code in this repository is used for the analysis as shown in: Parul Verma, Srikantan Nagarajan, and Ashish Raj. “Spectral Graph Theory of Brain Oscillations - revisited” (insert link).
+The code in this repository is used for the analysis as shown in: Parul Verma, Srikantan Nagarajan, and Ashish Raj. “Spectral Graph Theory of Brain Oscillations - revisited and improved” (https://www.biorxiv.org/content/10.1101/2021.09.28.462078v1). If you found this useful, please cite the following:
+
+```
+@article {verma2021spectral,
+	author = {Verma, Parul and Nagarajan, Srikantan and Raj, Ashish},
+	title = {Spectral graph theory of brain oscillations -- revisited and improved},
+	elocation-id = {2021.09.28.462078},
+	year = {2021},
+	doi = {10.1101/2021.09.28.462078},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2021/09/30/2021.09.28.462078},
+	eprint = {https://www.biorxiv.org/content/early/2021/09/30/2021.09.28.462078.full.pdf},
+	journal = {bioRxiv}
+}
+```
 
 ## Abstract:
 Mathematical modeling of the relationship between the functional activity and the structural wiring of the brain has largely been undertaken using non-linear and biophysically detailed mathematical models with regionally varying parameters. While this approach provides us a rich repertoire of multistable dynamics that can be displayed by the brain, it is computationally demanding. Moreover, although neuronal dynamics at the microscopic level are nonlinear and chaotic, it is unclear if such detailed nonlinear models are required to capture the emergent meso- (regional population ensemble) and macro-scale (whole brain) behavior, which is largely deterministic and reproducible across individuals. Indeed, recent modeling effort based on spectral graph theory has shown that an analytical model without regionally varying parameters can capture the empirical magnetoencephalography frequency spectra and the spatial patterns of the alpha and beta frequency bands accurately. 
