@@ -1,4 +1,4 @@
-# spectrome-revisited
+# spectrome-stability
 
 `Spectrome` is a combination of the words "spectrum" and "connectome". This package is the collection of codes that constructed the analysis for the preprint ["Spectral graph theory of brain oscillations - revisited and improved"](https://www.biorxiv.org/content/10.1101/2021.09.28.462078v1). This repository is developed based on the original model's [repository](https://github.com/Raj-Lab-UCSF/spectrome).
 
