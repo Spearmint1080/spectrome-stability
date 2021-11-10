@@ -1,6 +1,8 @@
 # spectrome-stability
 
-`Spectrome` is a combination of the words "spectrum" and "connectome". This package is the collection of codes that constructed the analysis for the preprint ["Spectral graph theory of brain oscillations - revisited and improved"](https://www.biorxiv.org/content/10.1101/2021.09.28.462078v1). This repository is developed based on the original model's [repository](https://github.com/Raj-Lab-UCSF/spectrome).
+`Spectrome` is a combination of the words "spectrum" and "connectome". 
+<!-- This package is the collection of codes that constructed the analysis for the preprint ["Spectral graph theory of brain oscillations - revisited and improved"](https://www.biorxiv.org/content/10.1101/2021.09.28.462078v1).  -->
+This repository is developed based on the original model's [repository](https://github.com/Raj-Lab-UCSF/spectrome).
 
 The spectral graph model (SGM) is a brain structure-function model that simulates brain activity power spectrum given a structural connectome. The model is linear, low-dimensional, and provides an analytical relationship between the brain's structural and functional patterns.
 
@@ -26,7 +28,7 @@ We explore the stability and dynamic properties of a hierarchical, linearized, a
 
 ## Set-up:
 
-First clone the environment to your computer, either download this repo as a `.zip` file or `git clone https://github.com/Raj-Lab-UCSF/spectrome.git`.
+<!-- First clone the environment to your computer, either download this repo as a `.zip` file or `git clone https://github.com/Raj-Lab-UCSF/spectrome.git`. -->
 
 Set up a [conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html) if you do not have all the packages/compatible versions. The list of dependencies is listed in `environment.yml`.
 
@@ -43,7 +45,7 @@ If you want to be able to run `spectrome` from anywhere, just add it's path to y
 After completing the set-up for conda environment and `spectrome` path, you may go to the `spectrome` folder and type `jupyter notebook` or `jupyter lab` in your terminal to run the Jupyter notebooks.
 
 ## Files:
- - `../spectrome/notebooks`: contains three jupyter notebooks, `run_model_example.ipynb` is the basic simulation of frequency spectrums with default parameters for the HCP template connectome. `spatialcorrelation.ipynb` looks at the spatial correlations between the eigenmodes and the empirical spectra, and `reproduce_MEG_modeled_spectra.ipynb` compares optimized modeled spectra with the MEG spectra.
+ - `../spectrome/notebooks`: contains three jupyter notebooks, `run_model_example.ipynb` is the basic simulation of frequency spectrums with default parameters for the HCP template connectome. `local_stability_freqspectra.ipynb` generates the stability and frequency spectra plots for the local model, `macro_stability_freqspectra.ipynb` generates the stability and frequency spectra for the macroscopic model, `local_LaplaceInverse.ipynb` generates the inverse Laplace transform simulations for the local model, and `dynamic_parameters.ipynb` generates the dynamic model parameter plots.
 
  - `../spectrome/data`: contains intermediate data.
     - `mean80_fibercount/length.csv`: HCP template connectome and distance matrix.
