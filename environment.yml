@@ -11,6 +11,8 @@ dependencies:
   - xarray
   - seaborn
   - netCDF4
+  - sympy
+  - mpmath
   - pip:
     - python-csv
     - sklearn
